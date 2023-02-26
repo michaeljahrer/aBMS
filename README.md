@@ -172,4 +172,4 @@ Software
   Geflashed hab ich den AVR über SPI Programmer (STK300).
   Es gehört eh alles auf open source avrgcc umgestellt. Naja so laufts mal.
 
-Michael
+Michael J
