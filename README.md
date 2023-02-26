@@ -56,13 +56,15 @@ Dafür gibts spezial chips die alle bekannten BMS einsetzen.
   Ein SOC[%] wird auch intern gerechnet. Akku Kapazität kann eingestellt werden.
 
 ## Wie funktioniert die single-cell Spannungs Messung?
-- Kurzfassung
+- Kurzfassung:
+
   Der ADC im ATMEGA324 misst über einen Differenzverstärker jede Zelle durch.
   Eine Zelle wird mit 2 Multiplexern selected.
   Das Pack wird mit einem 1:10 Spannungsteiler auf handliche 0-6V gebracht.
   Widerstandsungenauigkeiten sind in Software weg kalibiert.
 
-- Längere Version
+- Längere Version:
+
   Der ADC im ATMEGA324 misst jede Zelle 1000x und macht dann average. Darum die relativ gute
   Genauigkeit da der interne ADC nur 10bit hat und hier mV gemessen werden.
   Ein Differenzverstärker im rail-to-rail MCP6H84 OpAmp verstärkt die Differenzspannung einer Zelle.
@@ -82,6 +84,7 @@ Dafür gibts spezial chips die alle bekannten BMS einsetzen.
   Wert calibrieren. Fertig. Calibrations werden permanent im EEPROM gespeichert.
 
 - Vergleich mit anderem BMS
+
   Ja hab ich gemacht. Zeigt die gleichen Spannungen an. Die billig china BMS hüpfen oft mehr herum in der Messung unter Last.
   Meist hab ich mit Multimeter vergleichen.
   Ein aBMS hab ich auf LFP (3.45V) kalibiert und dann mit NMC (4.0V) laufen lassen. Spannungen passen.
