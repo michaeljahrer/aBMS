@@ -91,6 +91,7 @@ Dafür gibts spezial chips die alle bekannten BMS einsetzen.
 
 ## Was ist noch alles onboard?
 - Shunt Current measurement
+
   Das Ding macht das gleiche wie ein smart shunt. +/- Strom messen.
   Durch einen weiteren LM324 der über ein kleines board mit +/-12V versorgt wird kann der Strom gemessen werden.
   Die symmetrische +/- Versorgungsspannung ist wichtig damit das funktioniert.
@@ -106,6 +107,7 @@ Dafür gibts spezial chips die alle bekannten BMS einsetzen.
   Dann wird die Energie mitgezählt und über Referenzwert params (zB: 3.45V + <5A) auf 100% kalibiert.
   Der angezeige SOC passt so ungefähr was ich so mit beobachtet hatte.
 - SD card logging
+
   Das war mir wichtig onboard zu haben. Um die Vergangenheit Revue passieren zu lassen.
   Eine billige micro SD card reicht aus um Daten von vielen Jahren zu speichern.
   Logging Takt kann eingestellt werden (oder aus deaktiviert). Ein vielfaches von 1.6s.
@@ -117,18 +119,22 @@ Dafür gibts spezial chips die alle bekannten BMS einsetzen.
   Es funktioniert mit vielen SD card Herstellern, hab das schon probiert.
   Manchmal hängt das write am start, da hilft rein/raus stecken oder SD power ein/aus. Dann laufts.
 - 4 LEDs
+
   Die zeigen einen 4-bit counter an.
   Das ist das is-alive Signal. Wenn die blinken und counten dann lauft das Ding.
 - UART logging
+
   Das kann verwendet werden um zentral die Daten zu loggen.
   Es wird die gleiche Info wie beim SD logging raus geschrieben.
   9600-8-1-N mit standard parameter. Kann mit jedem xterm angeschaut werden.
   Es kann eingestellt werden ob und wie oft er das macht.
 - Relais output
+
   für die communication mit den PowMrs.
   schließt einfach einen potentialfreien schalter bei cell overvoltage
   max/recover volt kann eingestellt werden.
 - beeper output
+
   beep wenn cell overvoltage haben. Man hört das gut.
   max/recover volt kann eingestellt werden.
 
