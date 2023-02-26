@@ -7,7 +7,7 @@ Und für alle die sowas nicht bauen wollen kann: man ja durchschmökern wie sowa
 Einzelzellen Messung im mV Bereich ist nicht ganz so einfach.
 Dafür gibts spezial chips die alle bekannten BMS einsetzen.
  
-Features
+## Features
 - 100% clear to understand by simple open hardware and open source
 - no special chips used (only AVR, OpAmps and multiplexer)
 - 1-16cells, max. 60V pack voltage. 1 board.
@@ -37,7 +37,7 @@ Features
 - no MOSFET to break power. This need to be done outside if needed.
 - communication to PowMr solar charge controllers possible to stop charge on overvoltage
 
-Aufbau
+## Aufbau
   Stromversorgung lauft über einen Meanwell DC/DC converter der bei ca. 18V anlauft.
   Der macht stabile 12V.
   Dann ist eine Feinsicherung die gleich abraucht falls was schief geht.
@@ -55,7 +55,7 @@ Aufbau
   Ein weiterer Differenzverstärker mit Inverter kann den Strom übern Shunt +/- messen.
   Ein SOC[%] wird auch intern gerechnet. Akku Kapazität kann eingestellt werden.
 
-Wie funktioniert die single-cell Spannungs Messung?
+## Wie funktioniert die single-cell Spannungs Messung?
 - Kurzfassung
   Der ADC im ATMEGA324 misst über einen Differenzverstärker jede Zelle durch.
   Eine Zelle wird mit 2 Multiplexern selected.
@@ -86,7 +86,7 @@ Wie funktioniert die single-cell Spannungs Messung?
   Meist hab ich mit Multimeter vergleichen.
   Ein aBMS hab ich auf LFP (3.45V) kalibiert und dann mit NMC (4.0V) laufen lassen. Spannungen passen.
 
-Was ist noch alles onboard?
+## Was ist noch alles onboard?
 - Shunt Current measurement
   Das Ding macht das gleiche wie ein smart shunt. +/- Strom messen.
   Durch einen weiteren LM324 der über ein kleines board mit +/-12V versorgt wird kann der Strom gemessen werden.
@@ -129,7 +129,7 @@ Was ist noch alles onboard?
   beep wenn cell overvoltage haben. Man hört das gut.
   max/recover volt kann eingestellt werden.
 
-Bekannte Probleme/Issues/Erfahrungswerte
+## Bekannte Probleme/Issues/Erfahrungswerte
 - Erfahrungsgemäß kann ich sagen: die Dinger laufen bei mir schon Monate lang durch. Ohne Probleme.
 - Die 2 Schottky Dioden 1N5817 und der 1k Widerstand am AVR auf den Pins PA1+PA2 sind nachträglich eingebaut worden.
   Das verhindert große negative Spannung am AVR Pin.
@@ -146,7 +146,7 @@ Bekannte Probleme/Issues/Erfahrungswerte
   - Abhilfe #1: dauer-active-balancer (Heltec 5A)
   - Abhilfe #2: ein gleiches Spannungsteiler Netz auf (batt+) schalten.
 
-Warum nicht ein fertiges kaufen ? (JK,Ant,JBD,Daly,Seplos,REC,DIY..)
+## Warum nicht ein fertiges kaufen ? (JK,Ant,JBD,Daly,Seplos,REC,DIY..)
 - Ist eh die einfachere Variante Smile ... jedoch:
 - kritisches Bauteil: es muss zuverlässig die Ladung stoppen wenn eine Zelle abhaut
 - man weiss nicht was drin ist
@@ -154,7 +154,7 @@ Warum nicht ein fertiges kaufen ? (JK,Ant,JBD,Daly,Seplos,REC,DIY..)
 - spezial chips verbaut
 - software kann abstürzen (akkudoktor.net/forum/postid/105219/)
 
-Mechanischer Aufbau
+## Mechanischer Aufbau
   Das ganze Ding ist auf einer standard Lochplatine (2.54mm Rastermaß) aufgebaut.
   Bauteile vorne. Leitungen hinten.
   Die Leitungen sind alle aus Flachbandkabel gemacht.
@@ -164,7 +164,7 @@ Mechanischer Aufbau
   Ich hab mal eine partlist angehängt. Ca. 130€ kosten die Einzelteile. Bei größeren Mengen sicher billiger.
 
 
-Software
+## Software
   Es ist alles mit CodeVisionAVR V2.05.0 erstellt worden. Language: C
   Das ist eine (alte) Windows Programmierumgebung für AVR Microcontrollers. Mit coolem project wizzard.
   Ich kenne leider nur das, es kann eigentlich alles. Hat libs für SD cards usw.
